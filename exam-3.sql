@@ -16,13 +16,13 @@ LEFT JOIN restaurants r ON c.restaurant_id = r.id;
 -- 5 Lister les chefs et le nombre de plats qu'ils ont créés.
 SELECT chefs.*, COUNT(*) AS dishes_count FROM dishes 
 JOIN chefs ON dishes.chef_id = chefs.id
-GROUP BY chefs.id
+GROUP BY chefs.id;
 
 -- 6 Lister les chefs qui ont créé plus d'un plat.
 SELECT chefs.* FROM dishes 
 JOIN chefs ON dishes.chef_id = chefs.id
 GROUP BY chefs.id
-HAVING COUNT(*) > 1
+HAVING COUNT(*) > 1;
 
 -- 7 Calculez le nombre de chefs ayant créé un seul plat.
 
