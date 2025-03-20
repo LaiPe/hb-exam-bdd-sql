@@ -32,9 +32,11 @@ SELECT COUNT(*) FROM (
     HAVING COUNT(*) = 1
 ) AS sub_query;
 
-
 -- 8 Calculez le nombre de plats pour chaque type de cuisine.
-
+SELECT r.cuisine_type, COUNT(*) FROM dishes d
+JOIN chefs c ON d.chef_id = c.id
+JOIN restaurants r ON c.restaurant_id = r.id
+GROUP BY r.cuisine_type
 
 -- 9 Calculez le prix moyen des plats par type de cuisine.
 
