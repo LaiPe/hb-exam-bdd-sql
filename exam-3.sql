@@ -19,7 +19,10 @@ JOIN chefs ON dishes.chef_id = chefs.id
 GROUP BY chefs.id
 
 -- 6 Lister les chefs qui ont créé plus d'un plat.
-
+SELECT chefs.* FROM dishes 
+JOIN chefs ON dishes.chef_id = chefs.id
+GROUP BY chefs.id
+HAVING COUNT(*) > 1
 
 -- 7 Calculez le nombre de chefs ayant créé un seul plat.
 
