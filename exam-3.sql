@@ -2,7 +2,8 @@
 SELECT * FROM dishes WHERE price < 20;
 
 -- 2 Lister tous les plats des restaurants de cuisine Française et de cuisine Italienne en utilisant IN.
-
+SELECT * FROM restaurants
+WHERE cuisine_type IN('Française', 'Italienne')
 
 -- 3 Lister tous les ingrédients du Bœuf Bourguignon. 
 SELECT * FROM ingredients WHERE dish_id = 1;
