@@ -40,10 +40,16 @@ CREATE TABLE emprunts (
 );
 
 -- 2 : Créer un utilisateur « bibliothecaire » avec le mot de passe « secret » ayant accès uniquement à cette base de données bibliotheque avec tous les droits.
+CREATE USER 'bibliothecaire'@'localhost'
+IDENTIFIED BY "secret";
 
+GRANT ALL PRIVILEGES ON bibliotheque.* TO 'bibliothecaire'@'localhost';
+
+FLUSH PRIVILEGES; 
 
 
 -- 3a : Ajouter les adhérents : Jane Austen, Charles Dickens, Jules Verne, Mary Shelley. 
+
 
 
 -- 3b : Ajouter les livres : "Orgueil et Préjugés", "David Copperfield", "Vingt mille lieues sous les mers", "Frankenstein".
