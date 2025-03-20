@@ -39,7 +39,10 @@ JOIN restaurants r ON c.restaurant_id = r.id
 GROUP BY r.cuisine_type
 
 -- 9 Calculez le prix moyen des plats par type de cuisine.
-
+SELECT r.cuisine_type, AVG(d.price) FROM dishes d
+JOIN chefs c ON d.chef_id = c.id
+JOIN restaurants r ON c.restaurant_id = r.id
+GROUP BY r.cuisine_type
 
 -- 10 Trouver le prix moyen des plats créés par chaque chef, en incluant seulement les chefs ayant créé plus de 2 plats
 
