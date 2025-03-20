@@ -24,7 +24,7 @@ CREATE TABLE adherents (
 );
 
 CREATE TABLE livres (
-    isbn INT AUTO_INCREMENT PRIMARY KEY,
+    isbn INT NOT NULL PRIMARY KEY,
     titre VARCHAR(200) NOT NULL,
     auteur VARCHAR(200) NOT NULL,
     annee_publication INT NOT NULL,
