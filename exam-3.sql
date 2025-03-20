@@ -45,4 +45,7 @@ JOIN restaurants r ON c.restaurant_id = r.id
 GROUP BY r.cuisine_type
 
 -- 10 Trouver le prix moyen des plats créés par chaque chef, en incluant seulement les chefs ayant créé plus de 2 plats
-
+SELECT c.name, AVG(d.price) FROM dishes d
+JOIN chefs c ON d.chef_id = c.id
+GROUP BY c.id
+HAVING COUNT(*) = 2
