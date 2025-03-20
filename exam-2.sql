@@ -49,16 +49,49 @@ FLUSH PRIVILEGES;
 
 
 -- 3a : Ajouter les adhérents : Jane Austen, Charles Dickens, Jules Verne, Mary Shelley. 
-
+INSERT INTO adherents (nom, adresse, date_inscription, a_surveiller) VALUES
+("Jane Austen", "3 rue des pâquerettes, Clermont-Ferrand, France", '2020-04-05', FALSE),
+("Charles Dickens", "10 Downing Street, Londres, Royaume-Uni", '2021-06-15', FALSE),
+("Jules Verne", "2 allée des explorateurs, Nantes, France", '2019-09-20', FALSE),
+("Mary Shelley", "5 boulevard des créatures, Genève, Suisse", '2022-01-10', FALSE);
 
 
 -- 3b : Ajouter les livres : "Orgueil et Préjugés", "David Copperfield", "Vingt mille lieues sous les mers", "Frankenstein".
+INSERT INTO livres (isbn, titre, auteur, annee_publication, disponible) VALUES
+(123456, "Orgueil et Préjugés", "Jane Austen", 1813, TRUE),
+(234567, "David Copperfield", "Charles Dickens", 1850, TRUE),
+(345678, "Vingt mille lieues sous les mers", "Jules Verne", 1870, TRUE),
+(456789, "Frankenstein", "Mary Shelley", 1818, TRUE);
 
 
--- 3c : Ajouter des emprunts pour que chaque adhérent emprunte chaque chaque livre.
+
+-- 3c : Ajouter des emprunts pour que chaque adhérent emprunte chaque livre.
+INSERT INTO emprunts (id_adherent, isbn, date_emprunt, date_retour) VALUES
+(1, 123456, '2024-03-01', '2024-03-15'),
+(1, 234567, '2024-03-02', '2024-03-16'),
+(1, 345678, '2024-03-03', '2024-03-17'),
+(1, 456789, '2024-03-04', '2024-03-18'),
+
+(2, 123456, '2024-03-05', '2024-03-19'),
+(2, 234567, '2024-03-06', '2024-03-20'),
+(2, 345678, '2024-03-07', '2024-03-21'),
+(2, 456789, '2024-03-08', '2024-03-22'),
+
+(3, 123456, '2024-03-09', '2024-03-23'),
+(3, 234567, '2024-03-10', '2024-03-24'),
+(3, 345678, '2024-03-11', '2024-03-25'),
+(3, 456789, '2024-03-12', '2024-03-26'),
+
+(4, 123456, '2024-03-13', '2024-03-27'),
+(4, 234567, '2024-03-14', '2024-03-28'),
+(4, 345678, '2024-03-15', '2024-03-29'),
+(4, 456789, '2024-03-16', '2024-03-30');
 
 
 -- 4 : Charles Dickens déménage, mettez à jour son adresse dans la base de données. 
+UPDATE adherents
+SET adresse = "221B Baker Street, Londres, Royaume-Uni"
+WHERE id = 2;
 
 
 -- 5 : Un livre est empruntable 30 jours, faites une vue qui affiche les personnes qui ont des livres en retard et les livres en question
