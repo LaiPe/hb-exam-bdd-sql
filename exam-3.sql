@@ -25,6 +25,12 @@ GROUP BY chefs.id
 HAVING COUNT(*) > 1;
 
 -- 7 Calculez le nombre de chefs ayant créé un seul plat.
+SELECT COUNT(*) FROM (    
+    SELECT chefs.* FROM dishes 
+    JOIN chefs ON dishes.chef_id = chefs.id
+    GROUP BY chefs.id
+    HAVING COUNT(*) = 1
+) AS sub_query;
 
 
 -- 8 Calculez le nombre de plats pour chaque type de cuisine.
