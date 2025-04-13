@@ -30,3 +30,10 @@ CREATE TABLE etudiants_matieres (
 CREATE USER 'prof'@'localhost' IDENTIFIED BY '123';
 GRANT ALL PRIVILEGES ON promotion.* TO 'prof'@'localhost';
 FLUSH PRIVILEGES;
+
+-- 3a : Ajout des étudiants
+INSERT INTO etudiants (nom, prenom, moyenne) VALUES
+('Skywalker', 'Luke', NULL),
+('Organa', 'Leia', NULL),
+('Solo', 'Han', NULL),
+('Kenobi', 'Obi-wan', NULL);
