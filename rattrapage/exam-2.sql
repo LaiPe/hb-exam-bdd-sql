@@ -85,4 +85,9 @@ DELIMITER ;
 
 -- Un index sur date_eval dans la table etudiants_matieres serait utile si on effectue des requêtes qui filtrent par date d'évaluation.
 
+
 -- 9 : Requête RGPD
+-- on peut conserver la structure et supprimer uniquement les données personnelles
+
+DELETE FROM etudiants;
+-- Les notes dans etudiants_matieres seront automatiquement supprimées grâce à ON DELETE CASCADE
