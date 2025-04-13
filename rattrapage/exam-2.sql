@@ -64,3 +64,15 @@ UPDATE etudiants SET nom = 'Solo' WHERE nom = 'Organa' AND prenom = 'Leia';
 
 -- 5 : Suppression d'obi-wan Kenobi
 DELETE FROM etudiants WHERE nom = 'Kenobi' AND prenom = 'Obi-wan';
+
+-- 6 : Création du trigger de vérification de date
+DELIMITER //
+CREATE TRIGGER check_date_eval BEFORE INSERT ON etudiants_matieres
+FOR EACH ROW
+BEGIN
+    IF NEW.date_eval > CURRENT_DATE() THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = "La date d'éval ne peut pas être dans le futur";
+    END IF;
+END //
+DELIMITER ;
