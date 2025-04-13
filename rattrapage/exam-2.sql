@@ -25,3 +25,8 @@ CREATE TABLE etudiants_matieres (
     FOREIGN KEY (id_etudiant) REFERENCES etudiants(id_etudiant) ON DELETE CASCADE,
     FOREIGN KEY (code_mat) REFERENCES matieres(code_mat) ON DELETE CASCADE
 );
+
+-- 2 : Création de l'utilisateur "prof"
+CREATE USER 'prof'@'localhost' IDENTIFIED BY '123';
+GRANT ALL PRIVILEGES ON promotion.* TO 'prof'@'localhost';
+FLUSH PRIVILEGES;
