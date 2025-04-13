@@ -61,3 +61,6 @@ INSERT INTO etudiants_matieres (id_etudiant, code_mat, date_eval, note) VALUES
 
 -- 4 : Modification du nom de famille de Leia
 UPDATE etudiants SET nom = 'Solo' WHERE nom = 'Organa' AND prenom = 'Leia';
+
+-- 5 : Suppression d'obi-wan Kenobi
+DELETE FROM etudiants WHERE nom = 'Kenobi' AND prenom = 'Obi-wan';
