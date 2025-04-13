@@ -58,3 +58,6 @@ INSERT INTO etudiants_matieres (id_etudiant, code_mat, date_eval, note) VALUES
 (4, 'BDD', '2025-04-01', 15.5),
 (4, 'ADMIN', '2025-04-02', 16.5),
 (4, 'SQL', '2025-04-03', 17.0);
+
+-- 4 : Modification du nom de famille de Leia
+UPDATE etudiants SET nom = 'Solo' WHERE nom = 'Organa' AND prenom = 'Leia';
