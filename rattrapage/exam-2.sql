@@ -76,3 +76,11 @@ BEGIN
     END IF;
 END //
 DELIMITER ;
+
+-- 8 : index ?
+
+-- id_etudiant et code_mat dans la table etudiants_matieres sont déjà des index car ils font partie de la clé primaire et des clés étrangères.
+
+-- On pourrait ajouter un index sur le champ nom dans la table etudiants car nous faisons souvent des recherches par nom d'étudiant.
+
+-- Un index sur date_eval dans la table etudiants_matieres serait utile si on effectue des requêtes qui filtrent par date d'évaluation.
