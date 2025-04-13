@@ -84,3 +84,5 @@ DELIMITER ;
 -- On pourrait ajouter un index sur le champ nom dans la table etudiants car nous faisons souvent des recherches par nom d'étudiant.
 
 -- Un index sur date_eval dans la table etudiants_matieres serait utile si on effectue des requêtes qui filtrent par date d'évaluation.
+
+-- 9 : Requête RGPD
